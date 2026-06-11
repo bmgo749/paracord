@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "Node16",
+    "lib": ["ES2020"],
+
+    "outDir": "out",
+    "rootDir": "src",
+
+    "strict": true,
+
+    "sourceMap": true,
+
+    "moduleResolution": "Node16",
+
+    "types": [
+      "node",
+      "vscode"
+    ],
+
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+
+  "include": [
+    "src/**/*.ts"
+  ],
+
+  "exclude": [
+    "node_modules",
+    ".vscode-test"
+  ]
+}

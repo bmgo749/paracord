@@ -1,0 +1,60 @@
+{
+  "name": "paracord",
+  "displayName": "Paracord Language Support",
+  "description": "Syntax highlighting, IntelliSense, and contextual autocomplete for Paracord v2.0",
+  "version": "2.2.0",
+  "publisher": "paracord",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/paracord"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "paracord",
+    "discord",
+    "bot",
+    "nextcord"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "paracord",
+        "aliases": ["Paracord", "paracord"],
+        "extensions": [".cord"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icon.png",
+          "dark": "./icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "paracord",
+        "scopeName": "source.paracord",
+        "path": "./syntaxes/paracord.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "@types/vscode": "^1.120.0",
+    "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "install-extension": "code --install-extension paracord-2.2.0.vsix",
+    "lint": "tsc --noEmit"
+  }
+}

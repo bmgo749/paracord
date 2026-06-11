@@ -1,0 +1,11 @@
+setup.py
+paracord/__init__.py
+paracord/cli.py
+paracord/main.py
+paracord/parser.py
+paracord/runtime.py
+paracord.egg-info/PKG-INFO
+paracord.egg-info/SOURCES.txt
+paracord.egg-info/dependency_links.txt
+paracord.egg-info/entry_points.txt
+paracord.egg-info/top_level.txt
