@@ -1,0 +1,11 @@
+// Paracord v2.8 - Main Setup File
+// All .cord files in this directory will be auto-loaded!
+
+$bot(
+    $activity(playing;"Paracord v2.8 🚀")
+    $status("online")
+    $intents("all")
+    $prefix("!")
+)
+
+$run("YOUR_BOT_TOKEN_HERE")

@@ -1,0 +1,14 @@
+run = "python replit_main.py"
+entrypoint = "main.py"
+language = "python3"
+
+# Paracord .cord files use Python syntax for highlighting
+[languages.paracord]
+pattern = "**/*.cord"
+syntax = "python"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["sh", "-c", "python replit_main.py"]

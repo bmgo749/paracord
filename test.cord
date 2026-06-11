@@ -1,0 +1,14 @@
+// Test Paracord Syntax Highlighting
+
+$bot(
+    $prefix("!")
+    $intents("all")
+)
+
+$addCommand(
+    $name("test")
+    $sendMessage("Hello World")
+)
+
+$setUserVar($userID;coins;100)
+$getUserVar($userID;coins)

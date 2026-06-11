@@ -1,0 +1,70 @@
+// Slash Commands Examples
+
+// Simple input
+$addSlashCommand(
+    $name("greet")
+    $description("Greet someone")
+    $emoji("👋")
+    $slashCommandOption("name;Person's name;input;;true")
+    $sendMessage("Hello $value! 👋\n\nGreeting from $username")
+)
+
+// Choice dropdown
+$addSlashCommand(
+    $name("gender")
+    $description("Select your gender")
+    $emoji("⚧️")
+    $slashCommandOption("gender;Your gender;choice;Male|Female|Other;true")
+    $if[$value==("Male")]
+        $sendMessage("Gender: Male ♂️\n\nProfile updated!")
+    $elseif[$value==("Female")]
+        $sendMessage("Gender: Female ♀️\n\nProfile updated!")
+    $elseif[$value==("Other")]
+        $sendMessage("Gender: Other ⚧️\n\nProfile updated!")
+    $endif
+)
+
+// With cooldown + random
+$addSlashCommand(
+    $name("dailyslash")
+    $description("Claim daily reward (slash version)")
+    $emoji("💰")
+    $cooldown("10s;⏰ Come back in $time for your next daily!")
+    $sendMessage("💰 Daily claimed!\n\nYou got $random(50,150) coins!\n\nPlayer: $username")
+)
+
+// Quiz with choices
+$addSlashCommand(
+    $name("mathquiz")
+    $description("Solve a math problem")
+    $emoji("🧮")
+    $slashCommandOption("answer;What is 5 × 5?;choice;20|25|30;true")
+    $cooldown("15s;Wait $time before next quiz!")
+    $if[$value==("25")]
+        $sendMessage("✅ Correct! You earned $random(10,50) points!\n\n$username is smart! 🎉")
+    $elseif[$value==("20")]
+        $sendMessage("❌ Wrong! The answer is 25\n\nBetter luck next time, $username!")
+    $elseif[$value==("30")]
+        $sendMessage("❌ Wrong! The answer is 25\n\nBetter luck next time, $username!")
+    $endif
+)
+
+// Registration with multiple options
+$addSlashCommand(
+    $name("register")
+    $description("Register your account")
+    $emoji("📝")
+    $slashCommandOption("username;Your username;input;;true")
+    $slashCommandOption("role;Your role;choice;Developer|Designer|Manager;true")
+    $slashCommandOption("experience;Years of experience;choice;0-2|3-5|5+;true")
+    $sendMessage("✅ Registration Complete!\n\nApplication ID: #$random(1000,9999)\n\nThank you for registering, $mention!\n\nWe'll review your application soon.")
+)
+
+// Color picker
+$addSlashCommand(
+    $name("color")
+    $description("Pick your favorite color")
+    $emoji("🎨")
+    $slashCommandOption("color;Choose a color;choice;Red|Blue|Green|Yellow|Purple;true")
+    $sendMessage("You chose: $value 🎨\n\nUser: $username")
+)

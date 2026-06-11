@@ -1,0 +1,64 @@
+// Components: Buttons, Select Menus, Modals
+
+// ========== QUIZ BUTTONS ==========
+$newButton(
+    $addButton("ans_3;3;secondary;3;")
+    $id("checkAnswer")
+)
+
+$newButton(
+    $addButton("ans_4;4;success;4;✅")
+    $id("checkAnswer")
+)
+
+$newButton(
+    $addButton("ans_5;5;secondary;5;")
+    $id("checkAnswer")
+)
+
+// ========== ACTION BUTTONS ==========
+$newButton(
+    $addButton("btn_yes;Yes;success;yes;✅")
+    $id("confirmAction")
+)
+
+$newButton(
+    $addButton("btn_no;No;danger;no;❌")
+    $id("confirmAction")
+)
+
+$newButton(
+    $addButton("btn_report;Report User;danger;;🚨")
+    $id("openReportModal")
+)
+
+$newButton(
+    $addButton("btn_feedback;Send Feedback;primary;;📝")
+    $id("openFeedbackModal")
+)
+
+// ========== SELECT MENU ==========
+$newSelectMenu(
+    $id("colorPicker")
+    $placeholder("🎨 Choose your favorite color")
+    $addSelectMenuOption("red;Red;red")
+    $addSelectMenuOption("blue;Blue;blue")
+    $addSelectMenuOption("green;Green;green")
+    $addSelectMenuOption("yellow;Yellow;yellow")
+)
+
+// ========== MODALS ==========
+$newModal(
+    $id("reportForm")
+    $title("Report User")
+    $addTextInput("username;Username;3;32;Enter username")
+    $addTextInput("reason;Reason;10;500;Explain the reason...")
+)
+
+$newModal(
+    $id("feedbackForm")
+    $title("Feedback Form")
+    $addTextInput("name;Your Name;2;50;John Doe")
+    $addTextInput("email;Email (optional);5;100;example@email.com")
+    $addTextInput("message;Your Feedback;10;1000;Tell us what you think...")
+)
